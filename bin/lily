@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+lilypond Auld_Lang_Syne.ly
+open Auld_Lang_Syne.pdf
