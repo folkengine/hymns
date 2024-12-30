@@ -11,11 +11,6 @@
 \version "2.10.33"
 #(ly:set-option 'point-and-click #f)
 
-Timeline = {
-  \time 4/4
-  \partial 1
-}
-
 \paper
 {
     indent = 0.0
@@ -79,6 +74,15 @@ sopWords = \lyricmode
     % \override Score . LyricText #'self-alignment-X = #-1
     \set stanza = "1. "
     %\set vocalName = "Men/Women/Unison/SATB"
+        Should auld ac -- quaint -- ance be for -- got,
+        and nev -- er brought to mind?
+        Should auld ac -- quaint -- ance be for -- got,
+        and auld lang syne?
+
+        For auld lang syne, my jo,
+        for auld lang syne,
+        we'll tak' a cup o' kind -- ness yet,
+        for auld lang syne.
 }
 sopWordsTwo = \lyricmode
 {
@@ -96,26 +100,6 @@ sopWordsFive = \lyricmode
 {
     \set stanza = "5. "
 }
-sopWordsSix = \lyricmode
-{
-    \set stanza = "6. "
-}
-sopWordsSeven = \lyricmode
-{
-    \set stanza = "7. "
-}
-altoWords = \lyricmode
-{
-
-}
-tenorWords = \lyricmode
-{
-
-}
-bassWords = \lyricmode
-{
-
-}
 
 \score
 {
@@ -131,7 +115,27 @@ bassWords = \lyricmode
 		\global
 		%\override Score.MetronomeMark #'transparent = ##t
 		\override Score.MetronomeMark #'stencil = ##f
-		\tempo 4 = 120
+		\tempo 4 = 80
+            \partial 4
+            c'4     f'4. e'8 f'4 a'4 
+                    g'4. f'8 g'4 a'4 
+                    f'4. f'8 a'4 c''4 
+                    d''2. \bar "" \break
+
+            d''4    c''4. a'8 a'4 f'4 
+                    g'4. f'8 g'4 a'4
+                    f'4. (d'8) d'4 (c'4) 
+                    f'2.  \bar "||" \break
+
+            d''4    c''4. (a'8) a'4 (f'4)
+                    g'4. f'8 g'4 d''4   
+                    c''4. (a'8) a'4 (c''4)     
+                    d''2. \bar "" \break
+            
+            f''4    c''4. a'8 a'4 f'4 
+                    g'4. f'8 g'4 a'8 g'8
+                    f'4. (d'8) d'4 (c'4) 
+                    f'2. 
 
 		\bar "|."
 	    }
@@ -139,18 +143,18 @@ bassWords = \lyricmode
 	    \new Voice = "altos"
 	    {
 		\voiceTwo
+            c'4     c'4. c'8 c'4 f'4
+                    e'4. d'8 e'4 e'4
+                    
 	    }
 
-	    %\new Lyrics = sopranos { s1 }
+        \new Lyrics = sopranos { s1 }
+
 	    %\new Lyrics = sopranosTwo { s1 }
 	    %\new Lyrics = sopranosThree { s1 }
 	    %\new Lyrics = sopranosFour { s1 }
 	    %\new Lyrics = sopranosFive { s1 }
-	    %\new Lyrics = sopranosSix { s1 }
-	    %\new Lyrics = sopranosSeven { s1 }
-	    %\new Lyrics = altos { s1 }
-	    %\new Lyrics = tenors { s1 }
-	    %\new Lyrics = basses { s1 }
+
 	>>
 
 
@@ -161,11 +165,15 @@ bassWords = \lyricmode
 	    {
 		\voiceThree
 		\global
+            c'4     a4. bes8 a4 c'4 
+                    c'4. a8 bes4 c'4
 	    }
 
 	    \new Voice = "basses"
 	    {
 		\voiceFour
+            c'4     f4. g8 a4 f4
+                    c4. c8 c4 c4
 	    }
 	>>
 	%\context Lyrics = sopranos \lyricsto sopranos \sopWords

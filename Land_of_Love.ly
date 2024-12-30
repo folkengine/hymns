@@ -144,7 +144,6 @@ bassWords = \lyricmode
 
 \score
 {
-	%\transpose es' d'
 	<<
 		\new Staff
 		<<
